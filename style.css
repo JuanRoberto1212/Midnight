@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,8 +34,10 @@ body {
 
 /* Header */
 .header {
-  background: #0f172a;
+  background: linear-gradient(90deg, #020617, #020617);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 
 .nav {
   display: flex;
@@ -40,8 +47,11 @@ body {
 }
 
 .logo {
-  color: #fff;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #ffffff;
 }
+
 
 nav a {
   color: #cbd5f5;
@@ -55,40 +65,43 @@ nav .btn {
 
 /* Hero */
 .hero {
-  background: 
-    linear-gradient(
-      rgba(15, 23, 42, 0.65),
-      rgba(15, 23, 42, 0.65)
-    ),
+  background:
+    linear-gradient(rgba(15, 23, 42, .7), rgba(15, 23, 42, .7)),
     url("Banner\ roxo.jpg");
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
-  color: white;
   padding: 120px 0;
+  color: #fff;
 }
 
-.hero-content {
-  max-width: 850px;
-  margin-left: 50px;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
 }
 
-
-.hero h2 {
+.hero-text h2 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.hero p {
+.hero-text p {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
-.hero h2,
-.hero p {
-  text-align: left;
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
 }
 
 
@@ -101,6 +114,7 @@ nav .btn {
 .projects h3 {
   text-align: center;
   font-size: 2rem;
+  color: #000000;
 }
 
 .subtitle {
@@ -116,21 +130,76 @@ nav .btn {
 }
 
 .card {
-  background: #f8fafc;
+  background: #ffffff;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.card-divider {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0 16px;
+}
+
+.card-description {
+  color: #475569;
+  font-size: 0.95rem;
   margin-bottom: 15px;
 }
 
-.card h4 {
-  margin-bottom: 10px;
+
+.card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+
+.card-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@keyframes tagPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card-tags span {
+  background: #e0e7ff;
+  color: #1e40af;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  animation: tagPulse 3s infinite ease-in-out;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card-tags span:hover {
+  background: #c7d2fe;
+  transform: scale(1.1);
 }
 
 .placeholder {
@@ -138,18 +207,139 @@ nav .btn {
   text-align: center;
 }
 
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+
 /* About */
 .about {
   padding: 80px 0;
   text-align: center;
 }
 
-/* Contact */
-.contact {
-  padding: 80px 0;
-  background: #e0e7ff;
-  text-align: center;
+.carousel-preview {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  overflow: hidden;
 }
+
+.carousel-item {
+  width: 260px;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+
+  opacity: 0.5;
+  transform: scale(0.85);
+  transition: all 0.35s ease;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* ITEM ATIVO (CENTRAL) */
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Botões */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2563eb;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 5px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
+/* Contact */
+.contact-cta {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  padding: 100px 0;
+  color: #fff;
+}
+
+.contact-box {
+  text-align: center;
+  max-width: 700px;
+}
+
+.contact-box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-box p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #e0e7ff;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-btn.whatsapp {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.contact-btn.whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.4);
+}
+
+.contact-btn.email {
+  background: #ffffff;
+  color: #1e40af;
+}
+
+.contact-btn.email:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.35);
+}
+
 
 
 /* Tablet */
@@ -161,7 +351,18 @@ nav .btn {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+  }
 }
+
+
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -188,10 +389,40 @@ nav .btn {
     text-align: center;
   }
 
+  .hero-image {
+    display: none;
+  }
 
+  .hero-text h2 {
+    font-size: 2rem;
+  }
 
   .cards {
     grid-template-columns: 1fr;
   }
 
+  .carousel-preview {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+  }
+
+  .carousel-item {
+    min-width: 240px;
+  }
+
+ 
+    .contact-box h3 {
+      font-size: 2rem;
+    }
+
+    .contact-btn {
+      width: 100%;
+      max-width: 300px;
+    }
+
+
+
 }
+
+

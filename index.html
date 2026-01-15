@@ -1,79 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Roberto | Landing Pages</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <h1 class="logo">Juan Roberto</h1>
-    <nav>
-      <a href="#projetos">Projetos</a>
-      <a href="#sobre">Sobre Mim</a>
-      <a href="#contato" class="btn">Vamos Conversar</a>
-    </nav>
-  </div>
-</header>
+  <header class="header">
+    <div class="container nav">
+      <h1 class="logo">Juan Santos</h1>
+      <nav>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#contato" class="btn">Vamos Conversar</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="container hero-content">
-    <h2>Eu crio sites que geram resultados</h2>
-    <p>Landing Pages e Sites Simples para o seu negócio.</p>
-    <a href="#projetos" class="btn">Veja Meu Trabalho</a>
-    <img src="Perfil.png" alt="Foto de perfil">
-  </div>
-</section>
+  <section class="hero">
+    <div class="container hero-grid">
 
-<section id="projetos" class="projects">
+      <div class="hero-text">
+        <h2>Eu crio sites que geram resultados</h2>
+        <p>Landing Pages e Sites Simples para o seu negócio.</p>
+
+        <div class="hero-actions">
+          <a href="#projetos" class="btn">Veja Meu Trabalho</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="Perfil.png" alt="Foto de perfil">
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="projetos" class="projects">
+    <div class="container">
+      <h3>Meus Projetos</h3>
+      <p class="subtitle">Alguns dos trabalhos que realizei.</p>
+
+      <div class="cards">
+        <div class="card">
+
+          <h4 class="card-title">Sistema de Gerenciamento</h4>
+
+          <hr class="card-divider">
+
+          <p class="card-description">
+            Plataforma intuitiva e completa, projetada para otimizar o fluxo de vendas e gerenciar todas as operações de
+            dropshipping.
+          </p>
+
+          <hr class="card-divider">
+
+          <img src="Drop.png" alt="Gerencia Drop" class="card-image">
+
+          <div class="card-tags">
+            <span>✓ Dashboard</span>
+            <span>✓ Analise de Dados</span>
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <h4 class="card-title">Assistencia Tecnica</h4>
+
+          <hr class="card-divider">
+
+          <p class="card-description">
+            Um serviço de reparo rápido e eficiente, unindo tecnologia de ponta a um atendimento humanizado.
+          </p>
+
+          <hr class="card-divider">
+
+
+          <img src="Assistencia.png" alt="Assistencia" class="card-image">
+
+          <div class="card-tags">
+            <span>✓ Diagnostico rapido</span>
+            <span>✓ Certificados</span>
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <h4 class="card-title">Portifolio de Psicologia</h4>
+
+          <hr class="card-divider">
+
+          <p class="card-description">
+            O consultório oferece um ambiente acolhedor e profissional,
+            focado no suporte clínico para diversas demandas emocionais.
+          </p>
+
+          <hr class="card-divider">
+
+          <img src="Port.png" alt="portifolio" class="card-image">
+
+          <div class="card-tags">
+            <span>✓ Servico realizado</span>
+            <span>✓ disponibilidade</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
   <div class="container">
-    <h3>Meus Projetos</h3>
-    <p class="subtitle">Alguns dos trabalhos que realizei.</p>
+    <h3>Sobre Mim</h3>
+    <p class="about-text">
+      Stack focada em soluções modernas e escaláveis.
+    </p>
 
-    <div class="cards">
-      <div class="card">
-        <img src="clinica.jpg" alt="Landing Page Clínica">
-        <h4>Landing Page para Clínica</h4>
-        <p>Landing page focada em conversão de agendamentos.</p>
-        <span>✔ Responsivo</span>
+    <div class="carousel-preview">
+
+      <div class="carousel-item active">
+        <img src="React-icon.svg.png" alt="React">
+        <h4>React</h4>
+        <p>Websites modernos, complexos e altamente interativos.</p>
       </div>
 
-      <div class="card">
-        <img src=".jpg" alt="">
-        <h4>Site Institucional</h4>
-        <p>Site completo para apresentação de empresa.</p>
-        <span>✔ Carga rápida</span>
+      <div class="carousel-item">
+        <img src="NET_logo.png" alt=".NET" style="border-radius: 5%;">
+        <h4>.NET</h4>
+        <p>APIs robustas e sistemas escaláveis.</p>
       </div>
 
-      <div class="card placeholder">
-        <h4>Próximo Projeto</h4>
-        <p>Este espaço é reservado para o próximo projeto.</p>
-        <button disabled>Em breve</button>
+      <div class="carousel-item">
+        <img src="Flutter_logo.svg.png" alt="Flutter">
+        <h4>Flutter</h4>
+        <p>Apps mobile multiplataforma.</p>
       </div>
+
+      <div class="carousel-item">
+        <img src="Python.png" alt="Python">
+        <h4>Python & Dados</h4>
+        <p>Dashboards e análise de dados.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section id="sobre" class="about">
-  <div class="container">
-    <h3>Sobre Mim</h3>
+
+
+  <section id="contato" class="contact-cta">
+  <div class="container contact-box">
+
+    <h3>Vamos tirar seu projeto do papel?</h3>
     <p>
-      Sou desenvolvedor focado em criar soluções práticas para pequenos negócios.
-      Vamos trabalhar juntos para crescer o seu negócio.
+      Me chama e a gente conversa sobre a melhor solução pro seu negócio.
     </p>
+
+    <div class="contact-actions">
+
+      <a 
+        href="https://wa.me/11943789843" 
+        target="_blank" 
+        class="contact-btn whatsapp"
+      >
+        Falar no WhatsApp
+      </a>
+
+      <a 
+        href="mailto:robertojuan11112006@gmail.com" 
+        class="contact-btn email"
+      >
+        Enviar Email
+      </a>
+
+    </div>
+
   </div>
 </section>
 
-<section id="contato" class="contact">
-  <div class="container">
-    <h3>Entre em Contato</h3>
-    <p>Vamos conversar sobre o seu projeto!</p>
-    <a href="#" class="btn">Enviar Mensagem</a>
-  </div>
-</section>
 
 </body>
+
+
+<script src="script.js"></script>
+
 </html>
