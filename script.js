@@ -32,3 +32,37 @@ ${mensagem}`;
 
   window.open(url, '_blank');
 });
+
+
+function animatePrice(element, finalValue) {
+  let start = 0;
+  const duration = 1200;
+  const increment = finalValue / (duration / 16);
+
+  function update() {
+    start += increment;
+    if (start >= finalValue) {
+      element.textContent = finalValue.toFixed(2).replace('.', ',');
+    } else {
+      element.textContent = start.toFixed(2).replace('.', ',');
+      requestAnimationFrame(update);
+    }
+  }
+
+  update();
+}
+
+// Observer para animar quando aparecer na tela
+const prices = document.querySelectorAll('.price-number');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+      const value = parseFloat(entry.target.dataset.price);
+      animatePrice(entry.target, value);
+      entry.target.classList.add('animated');
+    }
+  });
+}, { threshold: 0.6 });
+
+prices.forEach(price => observer.observe(price));
