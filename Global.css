@@ -1,0 +1,226 @@
+/* ==================================================
+   RESET GLOBAL
+================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #05050a;
+  color: #ffffff;
+  cursor: url("../utils/Pointer.png") 6 6, auto;
+}
+
+/* ==================================================
+   CURSOR RING (GLOBAL — IGUAL AO INÍCIO)
+================================================== */
+.mc-ring {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 999px !important;
+
+  background: transparent !important;
+  border: 3px solid transparent !important;
+
+  border-image: linear-gradient(90deg, #F91D2E, #E25FFA) 1 !important;
+
+  box-shadow:
+    0 0 10px rgba(249, 29, 46, 0.35),
+    0 0 18px rgba(226, 95, 250, 0.25) !important;
+
+  pointer-events: none !important;
+}
+
+/* ==================================================
+   UTILITÁRIOS
+================================================== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ==================================================
+   HEADER / NAVBAR (GLOBAL)
+================================================== */
+.header-institutional {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: linear-gradient(180deg, #05050a, #020207);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* LOGO */
+.logo {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.logo span {
+  background: linear-gradient(90deg, #F91D2E, #E25FFA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==================================================
+   NAVEGAÇÃO
+================================================== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-menu a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+}
+
+.btn-nav {
+  background: linear-gradient(90deg, #F91D2E, #E25FFA);
+  color: #ffffff !important;
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+
+/* ==================================================
+   DROPDOWN
+================================================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: #cbd5f5;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  min-width: 240px;
+
+  background: #0a0a15;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  padding: 14px 0;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+/* ==================================================
+   MENU MOBILE
+================================================== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==================================================
+   MOBILE NAV
+================================================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    background: #05050a;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+
+    transition: right 0.3s ease;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .dropdown-content {
+    position: static;
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 10px;
+  }
+
+  .dropdown-content a {
+    padding: 6px 0;
+  }
+}
+
+/* ==================================================
+   ACESSIBILIDADE (OPCIONAL)
+================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
